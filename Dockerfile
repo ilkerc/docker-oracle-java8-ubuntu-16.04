@@ -15,6 +15,7 @@ RUN apt-get update && \
   echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" > /etc/apt/sources.list.d/webupd8team-java-trusty.list && \
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886 && \
   apt-get update && \
-  apt-get install -y git && \
+  apt-get install -y git curl openssh-client sudo && \
   apt-get install -y --no-install-recommends oracle-java8-installer oracle-java8-set-default && \
-  apt-get clean all
+  apt-get clean all && \
+  useradd -ms /bin/bash mavenuser
